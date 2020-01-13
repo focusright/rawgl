@@ -1,4 +1,6 @@
 **/build*
-
+*.o
+*.d
+rawgl
 .DS_Store
 
