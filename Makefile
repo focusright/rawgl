@@ -1,6 +1,6 @@
 
 SDL_CFLAGS = `sdl2-config --cflags`
-SDL_LIBS = `sdl2-config --libs` -lSDL2_mixer -lGL
+SDL_LIBS = `sdl2-config --libs` -lSDL2_mixer -framework OpenGL -framework GLUT
 
 DEFINES = -DBYPASS_PROTECTION -DUSE_GL
 
