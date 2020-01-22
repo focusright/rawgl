@@ -1,6 +1,7 @@
+**/disasm-*
 **/build*
 *.o
 *.d
 rawgl
+disasm
 .DS_Store
-

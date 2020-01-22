@@ -306,12 +306,12 @@ static void printOpcode(uint16_t addr, uint8_t opcode, int args[16]) {
 		}
 		break;
 	default:
-		if (opcode & 0xC0) {
-			const uint16_t offset = args[0] << 1;
-			fprintf(_out, "GFX_0x%02X offset=0x%04x", opcode, offset);
-			const char *name = _symbolsTable[offset];
-			if (name[0]) {
-				fprintf(_out, " name=%s", name);
+		if (opcode & 0xC0) {                                           // 0xC0 = 0b11000000
+			const uint16_t offset = args[0] << 1;                      // 0x40 = 0b01000000
+			fprintf(_out, "GFX_0x%02X offset=0x%04x", opcode, offset); // 0x80 = 0b10000000
+			const char *name = _symbolsTable[offset];                  // These are the
+			if (name[0]) {                                             // graphics opcodes
+				fprintf(_out, " name=%s", name);                       
 			}
 		}
 		break;
