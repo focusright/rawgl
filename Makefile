@@ -2,7 +2,7 @@
 SDL_CFLAGS = `sdl2-config --cflags`
 SDL_LIBS = `sdl2-config --libs` -lSDL2_mixer -framework OpenGL -framework GLUT
 
-DEFINES = -DUSE_GL
+DEFINES = -DBYPASS_PROTECTION -DUSE_GL
 
 CXXFLAGS := -g -O -MMD -Wall -Wpedantic $(SDL_CFLAGS) $(DEFINES)
 
@@ -16,7 +16,7 @@ DEPS = $(SRCS:.cpp=.d)
 
 rawgl: $(OBJS)
 	$(CXX) $(LDFLAGS) -o $@ $(OBJS) $(SDL_LIBS) -lz
-	#cp rawgl ./build-dos
+	cp rawgl ./build-dos
 	#cp rawgl ./build-amiga
 
 clean:
